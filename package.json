@@ -3,7 +3,7 @@
     "module": "index.js",
     "type": "module",
     "scripts": {
-        "build": "bun build ./src/index.ts --target=browser --outfile=./popup-engine.js && bun run remove-export.js"
+        "build": "bun build ./src/index.ts --target=browser --outfile=./popup-engine.js && bun run ./util/remove-export.js"
     },
     "devDependencies": {
         "@types/bun": "latest"
