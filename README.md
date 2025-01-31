@@ -1,12 +1,8 @@
-# popup-engine
-
-To install dependencies:
+# Popup Engine
 
 ```bash
 bun install
 ```
-
-To build:
 
 ```bash
 bun run build
