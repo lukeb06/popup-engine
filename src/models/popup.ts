@@ -18,7 +18,12 @@ export class Popup {
     contentEl: HTMLDivElement;
     buttonsWrapper: HTMLDivElement | undefined;
 
-    constructor(content: string, overlay: Overlay = new CloseableOverlay(), buttons?: ButtonT[]) {
+    constructor(
+        content: string,
+        overlay: Overlay = new CloseableOverlay(),
+        buttons?: ButtonT[],
+        padding: string = '1rem',
+    ) {
         this.content = content;
         this.uid = 'U' + (Date.now() + Math.random()).toString(16).replaceAll('.', '');
         this.el = document.createElement('div');
@@ -52,7 +57,7 @@ export class Popup {
                 transform: translate(-50%, -50%);
                 background-color: white;
                 border-radius: 0.5rem;
-                padding: 1rem;
+                padding: ${padding};
                 box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
                 max-width: 50vw;
                 max-height: 50vh;
@@ -62,8 +67,17 @@ export class Popup {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
-                gap: 1rem;
+                gap: 0.5rem;
                 align-items: center;
+            }
+
+            .${this.uid} .POPUP-BUTTON {
+                padding: 0.5rem 1rem;
+                border: none;
+                background-color: #379c44;
+                color: white;
+                border-radius: 0.25rem;
+                cursor: pointer;
             }
         `;
         this.styleEl = document.createElement('style');
