@@ -4,8 +4,6 @@
 bun install
 ```
 
-test
-
 ```bash
 bun run build
 ```
