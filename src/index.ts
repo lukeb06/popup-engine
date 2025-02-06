@@ -1,10 +1,25 @@
 import { submitDesignForm } from './api';
 import { setup } from './models/components';
 import { CloseableOverlay, Overlay } from './models/overlay';
-import { Popup, FormPopup, type ButtonT } from './models/popup';
-import { getRecaptchaToken } from './recaptcha';
+import { FormPopup, Popup } from './models/popup';
 
 setup();
+
+export function createPopup(title: string, content: string | HTMLElement) {
+    let d = document.createElement('div');
+    let h1 = document.createElement('h1');
+    h1.innerText = title;
+    d.appendChild(h1);
+    d.append(content);
+    d.style.minWidth = '300px';
+    const popup = new Popup(d, new CloseableOverlay(), [
+        { text: 'Close', variant: 'outline', onClick: () => popup.remove() },
+    ]);
+
+    popup.appendTo(document.body);
+
+    return popup;
+}
 
 export function createLandscapePopup(closeable: boolean = true) {
     const overlay = closeable ? new CloseableOverlay() : new Overlay();
@@ -16,7 +31,6 @@ export function createLandscapePopup(closeable: boolean = true) {
             {
                 title: 'Landscape Design',
             },
-            'br',
             {
                 header: "I'm interested in:",
                 subheader: '(Choose all that apply)',

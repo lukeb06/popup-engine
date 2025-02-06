@@ -253,6 +253,7 @@ export class FormPopup extends Popup {
                     h2.style.marginTop = '0';
                     h2.style.fontSize = '2.7rem';
                     h2.style.textAlign = 'center';
+                    h2.style.maxWidth = '400px';
                     this.formEl.append(h2);
                 }
 
@@ -267,9 +268,10 @@ export class FormPopup extends Popup {
                 if (item.header) {
                     const h3 = document.createElement('h3');
                     h3.innerText = item.header;
-                    h3.style.marginTop = '0';
+                    h3.style.margin = '0';
                     h3.style.textAlign = 'center';
                     h3.style.fontSize = '2.2rem';
+                    h3.style.maxWidth = '400px';
                     if (!item.subheader) h3.style.marginBottom = '1rem';
                     this.formEl.append(h3);
                 }
@@ -280,6 +282,7 @@ export class FormPopup extends Popup {
                     h4.style.margin = '0';
                     h4.style.marginBottom = '1rem';
                     h4.style.textAlign = 'center';
+                    h4.style.maxWidth = '400px';
                     this.formEl.append(h4);
                 }
             }
