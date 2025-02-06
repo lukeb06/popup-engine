@@ -23,18 +23,28 @@ export class Overlay {
                 top: 0;
                 left: 0;
                 width: 100vw;
+                opacity: 0;
                 height: 100vh;
                 display: block !important;
                 background-color: rgba(0, 0, 0, ${this.opacity});
                 backdrop-filter: blur(${this.blur}px);
                 z-index: ${Overlay.zIndex};
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            .${this.uid}.visible {
+                opacity: 1;
             }
         `;
         this.styleEl = document.createElement('style');
         this.styleEl.innerHTML = this.style;
+
+        setTimeout(() => {
+            this.el.classList.add('visible');
+        }, 5);
     }
 
-    setupEventListeners() { }
+    setupEventListeners() {}
 
     appendTo(el: HTMLElement) {
         el.appendChild(this.styleEl);
