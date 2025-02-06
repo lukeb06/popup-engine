@@ -5,7 +5,7 @@ import { FormPopup, Popup } from './models/popup';
 
 setup();
 
-export function createPopup(title: string, content: string | HTMLElement) {
+export function createPopup_(title: string, content: string | HTMLElement) {
     let d = document.createElement('div');
     let h1 = document.createElement('h1');
     h1.innerText = title;

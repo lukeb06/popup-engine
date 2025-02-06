@@ -7,6 +7,10 @@
     overflow-y: scroll;
 }
 
+body:has(.POPUP-OVERLAY) {
+    overflow: hidden !important;
+}
+
 @media (max-width: 500px) {
     .landscape-form {
         width: 90vw;
