@@ -1,0 +1,38 @@
+.landscape-form {
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  max-width: 800px;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+
+body:has(.POPUP-OVERLAY) {
+  overflow: hidden !important;
+}
+
+@media (max-width: 500px) {
+  .landscape-form {
+    width: 90vw;
+  }
+}
+
+@media (min-width: 500px) {
+  .landscape-form fancy-select {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+
+    /* place-items: center; */
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 1150px) {
+  .landscape-form fancy-select {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+
+    /* place-items: center; */
+    gap: 1rem;
+  }
+}
