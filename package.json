@@ -3,7 +3,7 @@
     "module": "index.js",
     "type": "module",
     "scripts": {
-        "build:css": "sass ./src/popup-engine.scss ./popup-engine.css --no-source-map --style=compressed",
+        "build:css": "sass ./src/index.scss ./popup-engine.css --no-source-map --style=compressed",
         "build": "bun build ./src/index.ts --target=browser --outfile=./dist/popup-engine.js && bun run build:css && bun run ./util/remove-export.js",
         "prepare": "husky install"
     },
