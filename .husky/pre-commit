@@ -1,3 +1,4 @@
 bun run build
+git add .
 npx lint-staged
 git add .
