@@ -3,10 +3,13 @@
     "module": "index.js",
     "type": "module",
     "scripts": {
-        "build": "bun build ./src/index.ts --target=browser --outfile=./dist/popup-engine.js && bun run ./util/remove-export.js"
+        "build": "bun build ./src/index.ts --target=browser --outfile=./dist/popup-engine.js && bun run ./util/remove-export.js",
+        "prepare": "husky install"
     },
     "devDependencies": {
-        "@types/bun": "latest"
+        "@types/bun": "latest",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.4.3"
     },
     "peerDependencies": {
         "typescript": "^5.0.0"
