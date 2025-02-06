@@ -1,3 +1,0 @@
-{
-    '*.{js,ts}': 'npx prettier --write --ignore-unknown',
-}
