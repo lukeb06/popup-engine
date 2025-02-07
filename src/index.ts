@@ -21,7 +21,7 @@ export function createPopup_(title: string, content: string | HTMLElement) {
     return popup;
 }
 
-export function createLandscapePopup_(closeable: boolean = true) {
+export function createLandscapePopup(closeable: boolean = true) {
     const overlay = closeable ? new CloseableOverlay() : new Overlay();
     const popup = new FormPopup(
         [
@@ -168,9 +168,12 @@ export function createLandscapePopup_(closeable: boolean = true) {
 
         try {
             const response = await submitDesignForm(data);
-            console.log(response);
+            popup.remove();
+            createPopup_('Thank you!', response);
         } catch (e) {
+            popup.remove();
             console.error(e);
+            createPopup_('Oops!', 'An error occurred. Please try again.');
         }
     });
 

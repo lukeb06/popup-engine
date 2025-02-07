@@ -885,7 +885,7 @@ function createPopup_(title, content) {
   popup.appendTo(document.body);
   return popup;
 }
-function createLandscapePopup_(closeable = true) {
+function createLandscapePopup(closeable = true) {
   const overlay = closeable ? new CloseableOverlay : new Overlay;
   const popup = new FormPopup([
     {
@@ -1026,9 +1026,12 @@ function createLandscapePopup_(closeable = true) {
     };
     try {
       const response = await submitDesignForm(data);
-      console.log(response);
+      popup.remove();
+      createPopup_("Thank you!", response);
     } catch (e) {
+      popup.remove();
       console.error(e);
+      createPopup_("Oops!", "An error occurred. Please try again.");
     }
   });
   popup.appendTo(document.body);
