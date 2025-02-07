@@ -900,7 +900,7 @@ function createLandscapePopup(closeable = true) {
     },
     {
       select: {
-        key: "interests",
+        key: "interested_in",
         options: [
           "Free Sketch-N-Go Service",
           "Scaled Drawing",
@@ -1015,7 +1015,7 @@ function createLandscapePopup(closeable = true) {
       city: formData.get("city"),
       state: formData.get("state"),
       zip_code: formData.get("zip"),
-      interests: formData.get("interests"),
+      interested_in: formData.get("interested_in"),
       timeline: formData.get("getStarted"),
       first_name: formData.get("firstName"),
       last_name: formData.get("lastName"),
