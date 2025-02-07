@@ -21,7 +21,7 @@ export function createPopup_(title: string, content: string | HTMLElement) {
     return popup;
 }
 
-export function createLandscapePopup(closeable: boolean = true) {
+export function createLandscapePopup_(closeable: boolean = true) {
     const overlay = closeable ? new CloseableOverlay() : new Overlay();
     const popup = new FormPopup(
         [

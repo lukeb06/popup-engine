@@ -885,7 +885,7 @@ function createPopup_(title, content) {
   popup.appendTo(document.body);
   return popup;
 }
-function createLandscapePopup(closeable = true) {
+function createLandscapePopup_(closeable = true) {
   const overlay = closeable ? new CloseableOverlay : new Overlay;
   const popup = new FormPopup([
     {
