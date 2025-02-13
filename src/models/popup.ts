@@ -308,6 +308,18 @@ export class FormPopup extends Popup {
 
             formData.forEach((value, key) => {
                 if (typeof value !== 'string') return;
+
+                if (key === 'interested_in') {
+                    if (formMap.has(key)) {
+                        const v = formMap.get(key);
+                        if (!(v instanceof Array)) return;
+                        formMap.set(key, [...v, value]);
+                    } else {
+                        formMap.set(key, [value]);
+                    }
+                    return;
+                }
+
                 if (formMap.has(key)) {
                     const v = formMap.get(key);
                     if (v instanceof Array) {
